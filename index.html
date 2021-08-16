@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body
+		{
+			background-color: yellow;
+			
+		}
+		div
+		{
+			width:400px;
+			height:350px;
+			box-shadow: 0 0 30px black;
+			border-radius: 30px;
+			margin:200px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		div img
+		{
+			width:inherit;
+			height: inherit;
+			border-radius: inherit;
+			transition:all 2s linear 2.5s;
+			position: absolute;
+		}
+		div	#curtain
+		{
+			width:100%;
+			height: inherit;
+			background-color: rgba(0,0,0,0.7);
+			position: absolute;
+			top:-200px;
+			transition:all 2s linear 1s;
+		}
+		div:hover #curtain
+		{
+			transform:perspective(200px) translateY(-100%);
+		}
+		div #ld
+		{
+			width:50%;
+			position: absolute;
+			top:-200px;
+			left:0px;
+			background-color: red;
+			border-radius:0 20px 20px 0;
+			transform:perspective(200px) rotateY(0deg);
+			transition:all 2s;
+			transform-origin: left;	
+		}
+		div:hover #ld
+		{
+			transform:perspective(200px) rotateY(90deg);
+		}
+		div #rd
+		{
+			width:50%;
+			position: absolute;
+			top:-200px;
+			right:0px;
+			background-color: blue;
+			border-radius:20px 0 0 20px;
+			transform:perspective(200px) rotateY(0deg);
+			transition:all 2s;
+			transform-origin: right;
+		}
+		div:hover #rd
+		{
+			transform:perspective(200px) rotateY(-90deg);
+		}
+		div:hover img
+		{
+			transform: perspective(200px) scale(1.2,1.2);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="jenn.jpeg">
+		<div id="curtain"></div>
+		<div id="ld"></div>
+		<div id="rd"></div>
+	</div>
+</body>
+</html>
